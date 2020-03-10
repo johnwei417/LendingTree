@@ -1,4 +1,4 @@
-# LendingTree
+# LendingTree (Back-end)
 
 ## Instruction
 1. Install Jetbrain IntelliJ IDEA in computer
@@ -15,6 +15,8 @@ Open localhost:8080/swagger-ui.html in the browser
 
 After running program, log files will auto generated and store inside the Logs/
 
+## Front-end (Github link)
+https://github.com/johnwei417/LendingTree-FE
 
 ## Screenshot
 ![ScreenShot](pics/unnamed11.png)
