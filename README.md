@@ -4,8 +4,9 @@
 1. Install Jetbrain IntelliJ IDEA in computer
 2. Import project into IntelliJ
 3. Import Maven dependencies
-4. Run application
-5. Open localhost:8080/ in the browser (Chrome / Firefox)
+4. Modify application.properties
+5. Run application
+6. Open localhost:8080/ in the browser (Chrome / Firefox)
 
 ## Swagger
 
