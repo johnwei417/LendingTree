@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+
+    <contextName>lending tree logger</contextName>
+    <!--    custom variable parameter-->
+    <property name="log.dir" value="logs/"/>
+    <!--    output to the coonsoleAppender-->
+    <appender name="consoleLog1" class="ch.qos.logback.core.ConsoleAppender">
+        <!--        display layout-->
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>
+                <pattern>%d{HH:mm:ss.SSS} %contextName [%thread] %-5level %logger - %msg%n</pattern>
+            </pattern>
+        </layout>
+        <!--
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+             <level>ERROR</level>
+        </filter>
+         -->
+    </appender>
+
+    <appender name="fileInfoLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+        <!--if only need INFO level log, however, if only filter INFO,
+        ERROR log still print out, because ERROR has higher priority-->
+
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <!--            Error Filter-->
+            <level>ERROR</level>
+            <!-- deny if matches -->
+            <onMatch>DENY</onMatch>
+            <!--allowed if not matches-->
+            <onMismatch>ACCEPT</onMismatch>
+        </filter>
+
+        <!--log name, if there is no File property, it will onlu use FileNamePattern file path rule,
+        if has both <File> and <FileNamePattern>, the current day of log is <File>, it will automatically change the date of log from before.
+        so, <File> log is for current day
+        -->
+        <File>${log.dir}/iag-info.log</File>
+        <!--TimeBasedRollingPolicy-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!--File path, define the log parse policy (put logs different days into one file) -->
+            <FileNamePattern>${log.dir}/iag-info.%d{yyyy-MM-dd}-%i.log</FileNamePattern>
+            <!--only keep logs for most recent 90 days -->
+            <maxHistory>90</maxHistory>
+
+            <!--define the size of log file, delete files if over the size limit -->
+            <totalSizeCap>10MB</totalSizeCap>
+            <maxFileSize>5KB</maxFileSize>
+        </rollingPolicy>
+        <!-- log ouput formatter -->
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%d [%thread] %-5level %logger %line - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="fileErrorLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--if only need error level log, need filter here, it is INFO level by default -->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <!-- log name, if there is no file property, then it will only use FileNamePattern rules -->
+        <File>${log.dir}/iag-error.log</File>
+        <!--TimeBasedRollingPolicy-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!--File path, define the log parse policy (put logs different days into one file) -->
+            <FileNamePattern>${log.dir}/iag-error.%d{yyyy-MM-dd}-%i.log</FileNamePattern>
+            <!--only keep logs for most recent 90 days -->
+            <maxHistory>90</maxHistory>
+            <totalSizeCap>10MB</totalSizeCap>
+            <maxFileSize>5KB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%d [%thread] %-5level %logger{36} %line - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root name="com.sunshine" additivity="false" level="info">
+        <appender-ref ref="consoleLog1"/>
+        <appender-ref ref="fileInfoLog"/>
+        <appender-ref ref="fileErrorLog"/>
+    </root>
+</configuration>
