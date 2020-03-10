@@ -14,7 +14,7 @@ Open localhost:8080/swagger-ui.html in the browser
 After running program, log files will auto generated and store inside the Logs/
 
 ![Alt text](https://raw.github.com/johnwei417/LendingTree/tree/master/pics/unnamed11.png?raw=true)
-![ScreenShot](https://github.com/johnwei417/LendingTree/tree/master/pics/unnamed10.png)
+![image](https://github.com/johnwei417/LendingTree/tree/master/pics/unnamed10.png)
 ![ScreenShot](https://github.com/johnwei417/LendingTree/tree/master/pics/unnamed9.png)
 ![ScreenShot](https://github.com/johnwei417/LendingTree/tree/master/pics/unnamed8.png)
 ![ScreenShot](https://github.com/johnwei417/LendingTree/tree/master/pics/unnamed7.png)
