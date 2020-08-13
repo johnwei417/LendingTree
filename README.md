@@ -8,7 +8,7 @@
 5. Run application
 6. Open localhost:8080/ in the browser (Chrome / Firefox)
 
-## Swagger
+## Documentation (Swagger)
 
 Open localhost:8080/swagger-ui.html in the browser
 
