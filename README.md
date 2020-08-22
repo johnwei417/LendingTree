@@ -1,7 +1,15 @@
 # LendingTree (Back-end)
 
+## Description
+- Online Automated Web Based System
+- Provide an interface to help customers to apply loans online and keep track of the loan status
+- Assist loan agencies to complete the formalities and procedures, e.g. accept or reject the loans from customers, check the pending loans, assign it to departments
+- Provide a transparency system for both customers and loan agencies
+- Purpose: speed up the whole organizational process
+
+
 ## Instruction
-1. Install Jetbrain IntelliJ IDEA in computer
+1. Install Jetbrain IntelliJ IDEA on your computer
 2. Import project into IntelliJ
 3. Import Maven dependencies
 4. Modify application.properties
