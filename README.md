@@ -7,6 +7,12 @@
 - Provide a transparency system for both customers and loan agencies
 - Purpose: speed up the whole organizational process
 
+## Project Modules
+- **Administrator**: Mange Customers, Employees, Loans and assign loan applications to pickup department to start loan process
+- **Pickup**: View all loan requests which assigned by bank administrator and collect documents from customers against his/her applied loans. Applications automatically forward to Verification department once pickup process done by employees at pickup department
+- **Verification**: View all loan requests after Pickup, employee will check documents collected by pickup department as per bank rule, and submit verify or reject comment to bank
+- **Legal**: Employees can view all loans after Verification, employees will verify legal about terms & conditions of bank. Once Legal submitted, application status will automatically send to customer email and bank admin
+
 
 ## Instruction
 1. Install Jetbrain IntelliJ IDEA on your computer
