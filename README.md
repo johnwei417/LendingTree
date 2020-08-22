@@ -17,10 +17,11 @@
 ## Instruction
 1. Install Jetbrain IntelliJ IDEA on your computer
 2. Import project into IntelliJ
-3. Import Maven dependencies
-4. Modify application.properties
-5. Run application
-6. Open localhost:8080/ in the browser (Chrome / Firefox)
+3. Import/download Maven dependencies
+4. Modify application.properties to fit your environment
+5. Import loan.sql database to Mysql database
+6. Run application
+7. Open localhost:8080/ in the browser (Chrome / Firefox)
 
 ## Documentation (Swagger)
 
